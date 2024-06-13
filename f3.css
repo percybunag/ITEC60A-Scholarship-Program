@@ -1,0 +1,96 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+
+  @media (max-width: 576px) {
+    .bg-img {
+        min-height: 170vh;
+    }
+  }
+  
+  @media (min-width: 577px) and (max-width: 760px) {
+    .bg-img {
+        min-height: 160vh;
+    }
+  }
+  
+  @media (min-width: 761px) {
+    .bg-img {
+        min-height: 100vh;
+    }
+  }
+
+.bg-img{
+    background-image: linear-gradient(to right, rgba(32, 156, 72, .6), rgba(32, 156, 72, .6)), url(img/newcityhall.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.card-body {
+    background-color: #EBE6E6;
+    border-radius: 15px;
+}
+
+.card-body p{
+    font-size: medium;
+    text-align: center  ;
+}
+h1{
+    font-size: larger;
+    font-weight: bold;
+}   
+
+.white {
+    border: none;
+    border-radius: 15px;
+  }
+
+form .form-label{
+    font-weight: bold;
+}
+
+form .form-control {
+    border-radius: 10px; 
+    border: 1px solid #000000; 
+    transition: border-color 0.3s; 
+    background-color: #d2d2d2;
+  }
+
+
+.Btn2{
+    width: 250px;
+    height: 30px;
+    background: #053774;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    font-size: small;
+    color: white; 
+    
+}
+
+.container{
+    padding-top: 125px;
+    padding-bottom: 133px;
+    border-radius: 15px;
+  }
+
+  .toggle-password {
+    position: absolute;
+    right: 55px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding-bottom: 37px;
+  }
+  
+  .toggle-password img {
+    width: 20px;
+    height: 20px;
+  }
+  .error{
+    color: red;
+    font-weight: 700;
+  }

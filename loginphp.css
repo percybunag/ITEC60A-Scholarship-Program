@@ -1,0 +1,122 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat';
+  }
+  .card-body{
+    background-color: #EBE6E6;
+    border-radius: 15px;
+  }
+  .text-header{
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .img-fluid{
+    width: 120px;
+  }
+  label{
+    font-weight: bold;
+  }
+  .white{
+    border: 2px solid red;
+  }
+  .button-container {
+  display: flex;
+  justify-content: center;
+  }
+
+  .bg-img {
+  background-image: linear-gradient(to right, rgba(32, 156, 72, .6), rgba(32, 156, 72, .6)), url(img/newcityhall.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  }
+  
+  .card-body {
+  background-color: #EBE6E6;
+  border-radius: 15px;
+  }
+  
+  .text-header {
+  font-size: 24px;
+  font-weight: 700;
+  }
+  
+  .img-fluid {
+  width: 120px;
+  }
+  
+  label {
+  font-weight: bold;
+  }
+  
+  .white {
+  border: 2px solid red;
+  }
+  .button-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  }
+  .custom-center-button {
+  border-radius: 15px;
+  }
+  .custom-center-button {
+  border-radius: 15px;
+  }
+  
+  .link-container span {
+  margin-right: 5px; 
+  }
+  
+  .link-container a:not(:last-child) {
+  margin-right: 750px; 
+  }
+  
+  .link-container a:last-child {
+  margin-right: 0;
+  }
+  form .form-control {
+  border-radius: 10px; 
+  border: 1px solid #000000; 
+  transition: border-color 0.3s; 
+  background-color: #d2d2d2;
+  }
+  .footer-container{
+  color: white;
+  font-weight: 700;
+  }
+  
+  .Btn2{
+  width: 85px;
+  height: 30px;
+  background: #032d5f;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-size: small;
+  color: white; 
+  
+  }
+  
+  .container{
+  padding-top: 100px;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 55px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding-bottom: 37px;
+  }
+  
+  .toggle-password img {
+    width: 20px;
+    height: 20px;
+  }
+  .error{
+    color: red;
+    font-weight: 700;
+  }

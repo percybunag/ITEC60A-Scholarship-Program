@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Government of Imus | Scholarship Program</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+    <style>
+        * {
+            font-family: 'Montserrat';
+        }
+        .cover-page {
+            height: 70vh;
+            background: linear-gradient(to right, rgba(32, 156, 72, .6), rgba(32, 156, 72, .6)), url('img/newcityhall.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .navbar {
+            position: fixed;
+            margin-top: 0;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            margin-left: 150px;
+        }
+
+        .navbar-transparent {
+            background-color: transparent;
+        }
+
+        .navbar-scrolled {
+            background-color: white !important;
+            color: #053774 !important;
+
+        }
+
+        .navbar-scrolled .nav-link {
+            color: #053774 !important;
+        }
+        .nav-link:hover {
+            color: #053774 !important;
+        }
+        .navbar-scrolled .nav-link:hover {
+            color: #209C48 !important;
+        }
+
+
+        .about, .qualification, .requirements {
+            background-color: #f8f9fa;
+            position: relative;
+        }
+
+        .about .mayor-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-color: #209C48;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding-left: 20px; 
+            z-index: 1;
+        }
+        .header-text {
+            font-weight: 700;
+            color: #053774;
+        }
+        .about .mayor-info h3 {
+            margin-left: 740px;
+            font-size: 35px;
+        }
+
+        .about .mayor-info .title {
+            margin-left: 905px;
+            font-weight: normal;
+            font-size: 20px;
+        }
+
+        .left-content {
+            text-align: left;
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        .bot-left {
+            text-align: left;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .nigga {
+            margin-left: 200px;
+        }
+
+        .img-standing {
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-paragraph {
+            font-weight: 600;
+            font-size: 18px;
+            letter-spacing: 1px;
+            text-indent: 100px;
+            color: #053774;
+        }
+        mark {
+            background-color: transparent;
+            color: #209C48;
+            font-weight: 700;
+            font-size: 20px;
+        }
+        .label-bar {
+            background-color: #053774;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            margin: 0;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .label-bar p {
+            font-weight: bolder;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+        .details li {
+            list-style-type: none;
+            font-size: 24px;
+            color: #209C48;
+            font-weight: 700;
+            text-align: start;
+        }
+        .req-label {
+            background-color: #209C48;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            margin: 0;
+            font-weight: bolder;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .req-label p {
+            margin: 0;
+            font-weight: bolder;
+            letter-spacing: 2px;
+        }
+        .req li {
+            list-style-type: none;
+            font-size: 24px;
+            color: #053774;
+            font-weight: 700;
+            text-align: start;
+            letter-spacing: 1px;
+        }
+        .req ion-icon {
+            color: #209C48;
+        }
+
+        .footer {
+            background-color: #053774;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .footer .footer-links {
+            margin-bottom: 20px;
+            text-align: start;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-transparent sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="img/City_of_IMUS_logo_2022.png" width="70px" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav ml-5">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#qualification">Qualification</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#requirements">Requirements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white" href="login.php">Sign In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cover Page Section -->
+    <section id="cover" class="cover-page d-flex justify-content-center align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="left-content col-md-12 mt-5">CITY OF IMUS SCHOLARSHIP PROGRAM</div>
+                <div class="bot-left col-md-6">Educational Assistance for the Students of City of Imus</div>
+                <div class="bot-right col-md-6">
+                    <center><a class="btn btn-primary nigga" href="login.php" role="button">Get Started</a></center>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-7">
+                    <h3 class="header-text">ABOUT THE PROGRAM</h3><br>
+                    <p class="about-paragraph">Welcome to the <mark>City of Imus Scholarship Program</mark>, a tribute of Mayor Alex Advincula's consistent commitment to education and developing the community. </p>
+                    <p class="about-paragraph">This program aims to empower the youth of Imus by giving them access to high-quality educational opportunities, all under the visionary leadership of Mayor Advincula. 
+                        The scholarship program supports deserving students in following their academic goals, regardless of their background or financial condition, with a focus on diversity and merit. </p>
+                    <p class="about-paragraph"><mark>Mayor Advincula</mark> partners with local stakeholders and educational institutions to make sure the initiative keeps growing and has a significant impact on the lives of Imus people. Under the unwavering direction of Mayor Alex Advincula, join us in our mission to use education to foster a better future for the City of Imus.</p>
+                </div>
+                <div class="col-md-5">
+                    <img src="img/MayorStanding.png" width="90%" class="img-standing" alt="Mayor Alex Advincula">
+                </div>
+            </div>
+            <div class="mayor-info">
+                <div>
+                    <h3>Mayor Alex Advincula</h3>
+                    <div class="title"><i>Mayor, City of Imus</i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualification Section -->
+    <section id="qualification" class="section qualification">
+        <div class="label-bar">
+            <div>
+                <p>QUALIFICATION FOR SCHOLARSHIP PROGRAM:</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center m-5">
+                <div class="col-md-12 d-flex align-items-center justify-content-center">
+                    <ul class="details">
+                        <li><ion-icon name="checkmark-circle"></ion-icon> Natural-born Filipino citizen residing at City of Imus, Cavite</li><br>
+                        <li><ion-icon name="checkmark-circle"></ion-icon> Parents (Mother and Father) are registered voter of this City.</li><br>
+                        <li><ion-icon name="checkmark-circle"></ion-icon> The applicant should be a registered voter in case of the absence of his or her parent.</li><br>
+                        <li><ion-icon name="checkmark-circle"></ion-icon> Maintaining an average grade of 85% or 2.0 GPA.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section id="requirements" class="section requirements">
+        <div class="req-label">
+            <div>
+                <p>REQUIREMENTS FOR APPLYING SCHOLARSHIP PROGRAM:</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center m-5">
+                <div class="col-md-12 d-flex align-items-center justify-content-center">
+                    <ul class="req">
+                        <li><ion-icon size="large" name="checkmark-circle-outline"></ion-icon> Certificate of Grades</li><br>
+                        <li><ion-icon size="large" name="checkmark-circle-outline"></ion-icon> Registration Form of Current Semester</li><br>
+                        <li><ion-icon size="large" name="checkmark-circle-outline"></ion-icon> Photocopy of School ID with Specimen’s Signature</li><br>
+                        <li><ion-icon size="large" name="checkmark-circle-outline"></ion-icon> Personal Letter for Mayor Advincula</li><br>
+                        <li><ion-icon size="large" name="checkmark-circle-outline"></ion-icon> Barangay Clearance</li><br>
+                        <li><ion-icon size="large" name="checkmark-circle-outline"></ion-icon> Scholarship Form <sub>(Provided by Office of the Scholarship Program)</sub></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1 footer-links">
+                    <img src="img/Ph_seal_Imus.png" width="100px" class="img mr-3"alt="">
+                </div>
+                <div class="col-md-4 footer-links">
+                    <h5><b>City Government of Imus</b></h4>
+                    <h6><b>Office of Scholarship Program</b></h6>
+                    <p>Imus Municipal Hall, Maestro G., City of Imus, Cavite</p>
+                    <p>Contact Number: (046) 123-4567</p>
+                </div>
+                <div class="col-md-4 footer-links">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#cover">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#qualification">Qualification</a></li>
+                        <li><a href="#requirements">Requirements</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-links">
+                    <h5>Follow Us</h5>
+                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                </div>
+            </div>
+            <hr>
+            <p>&copy; 2024 City of Imus Scholarship Program. All Rights Reserved.</p>
+            <p>
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a> | 
+                <a href="#">Contact Us</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!--JavaScript to change navbar style on scroll -->
+    <script>
+        window.addEventListener('scroll', function() {
+            var navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
