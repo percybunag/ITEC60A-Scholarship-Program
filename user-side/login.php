@@ -1,56 +1,172 @@
+<?php
+session_start();
+
+include 'db_connection.php';
+
+$msg = ""; 
+
+if (isset($_POST["submit"])) {
+  $email_add = $_POST["username"];
+  $password = $_POST["password"];
+
+  $stmt = $conn->prepare("SELECT * FROM user WHERE email_address = ? AND `password` = ?");
+  $stmt->bind_param("ss", $email_add, $password);
+  $stmt->execute();
+  $result = $stmt->get_result();
+
+  if ($result->num_rows > 0) {
+    $user = $result->fetch_assoc();
+    
+    // Save user info in session
+    $_SESSION['user_data'] = $user;
+
+    // Redirect to dashboard
+    header("Location: dashboard.php");
+    exit();
+  } else {
+    $msg = "Invalid Credentials";
+  }
+
+  $stmt->close();
+}
+
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scholarship Program | Login</title>
-  <link rel="stylesheet" href="loginphp.css">
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
+<style>
+  *{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat';
+  }
+  .card-body{
+    background-color: #EBE6E6;
+    border-radius: 15px;
+  }
+  .text-header{
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .img-fluid{
+    width: 120px;
+  }
+  label{
+    font-weight: bold;
+  }
+  .button-container {
+  display: flex;
+  justify-content: center;
+  }
+
+  .bg-img {
+  background-image: linear-gradient(to right, rgba(32, 156, 72, .6), rgba(32, 156, 72, .6)), url(../img/newcityhall.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  }
+  
+  .card-body {
+  background-color: #EBE6E6;
+  border-radius: 15px;
+  }
+  
+  .text-header {
+  font-size: 24px;
+  font-weight: 700;
+  }
+  
+  .img-fluid {
+  width: 120px;
+  }
+  
+  label {
+  font-weight: bold;
+  }
+  
+  .button-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  }
+  .custom-center-button {
+  border-radius: 15px;
+  }
+  .custom-center-button {
+  border-radius: 15px;
+  }
+  
+  .link-container span {
+  margin-right: 5px; 
+  }
+  
+  .link-container a:not(:last-child) {
+  margin-right: 750px; 
+  }
+  
+  .link-container a:last-child {
+  margin-right: 0;
+  }
+  form .form-control {
+  border-radius: 10px; 
+  border: 1px solid #000000; 
+  transition: border-color 0.3s; 
+  background-color: #d2d2d2;
+  }
+  .footer-container{
+  color: white;
+  font-weight: 700;
+  }
+  
+  .Btn2{
+  width: 85px;
+  height: 30px;
+  background: #032d5f;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-size: small;
+  color: white; 
+  
+  }
+  
+  .container{
+  padding-top: 100px;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 55px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding-bottom: 37px;
+  }
+  
+  .toggle-password img {
+    width: 20px;
+    height: 20px;
+  }
+  .error{
+    color: red;
+    font-weight: 700;
+  }
+
+</style>
 <body>
-<?php
-   $servername = "localhost";
-   $username = "root";
-   $password = "";
-   $dbname = "db_scholarship";
-
-   $conn = new mysqli($servername, $username, $password, $dbname);
-
-   if ($conn->connect_error) {
-     die("Connection failed: " . $conn->connect_error);
-   }
-
-   $msg = ""; 
-
-   if (isset($_POST["submit"])) {
-     $email_add = $_POST["username"];
-     $password = $_POST["password"];
-
-     $stmt = $conn->prepare("SELECT email_address, `password` FROM user WHERE email_address = ? AND `password` = ?");
-     $stmt->bind_param("ss", $email_add, $password);
-     $stmt->execute();
-
-     $stmt->store_result();
-
-     if ($stmt->num_rows > 0) {
-       header("Location: dashboard.html");
-       exit();
-     } else {
-       $msg = "Invalid Credentials";
-     }
-
-     $stmt->close();
-   }
-
-   $conn->close();
- ?>
   <div class="bg-img">
       <div class="container">
           <div class="white card p-4 w-100">
               <div class="container-fluid text-center">
-                  <a href="index.html">
-                      <img src="img/Ph_seal_Imus.png" class="img-fluid p-2" alt="">
+                  <a href="/ITEC60A/index.html">
+                      <img src="/ITEC60A/img/Ph_seal_Imus.png" class="img-fluid p-2" alt="">
                   </a>
                   <h1 class="text-header">Member Login</h1>
               </div>

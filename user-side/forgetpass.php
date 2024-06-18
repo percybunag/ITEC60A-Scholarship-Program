@@ -1,18 +1,9 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "db_scholarship";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'db_connection.php';
 
 if (isset($_POST['submit'])) {
     $mailrequest = $_POST['email'];
-    $check_email = mysqli_query($conn, "SELECT email_address FROM user WHERE email_address='$mailrequest'");
+    $check_email = mysqli_query($conn, "SELECT email_address FROM user_info WHERE email_address='$mailrequest'");
     $res = mysqli_num_rows($check_email);
     if ($res > 0) {
         $token = bin2hex(random_bytes(50));
@@ -32,8 +23,8 @@ if (isset($_POST['submit'])) {
             <p>If you did not request a password reset, no further action is required.</p>
         </div>';
 
-        include_once("phpmailer/class.phpmailer.php");
-        include_once("phpmailer/class.smtp.php");
+        include_once("../phpmailer/class.phpmailer.php");
+        include_once("../phpmailer/class.smtp.php");
 
         $mail = new PHPMailer;
         $mail->IsSMTP();
@@ -68,16 +59,110 @@ if (isset($_POST['submit'])) {
     <title>Scholarship Program | Forget Password</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="f1.css">
     <link rel="icon" type="png" href="img/Ph_seal_Imus.png">
 </head>
+<style>
+    * {
+  padding: 0;
+  margin: 0;
+}
+
+.bg-img {
+  background-image: linear-gradient(to right, rgba(32, 156, 72, .6), rgba(32, 156, 72, .6)), url(../img/newcityhall.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.card-body {
+  background-color: #EBE6E6;
+  border-radius: 15px;
+}
+
+.card-body p {
+  font-size: medium;
+  text-align: center;
+}
+
+h1 {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.white {
+  border: none;
+  border-radius: 15px;
+}
+
+form .form-label {
+  font-weight: bold;
+}
+
+form .form-control {
+  border-radius: 10px;
+  border: 1px solid #000000;
+  transition: border-color 0.3s;
+  background-color: #d2d2d2;
+}
+
+.Btn1 {
+  width: 85px;
+  height: 30px;
+  background: #D9D9D9;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-size: small;
+  color: black;
+}
+
+.Btn2 {
+  width: 85px;
+  height: 30px;
+  background: #053774;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-size: small;
+  color: white;
+  
+}
+
+.container {
+  padding-top: 125px;
+  padding-bottom: 133px;
+}
+
+/* Responsive design for different screen sizes */
+@media (max-width: 576px) {
+  .bg-img {
+      min-height: 170vh;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 760px) {
+  .bg-img {
+      min-height: 160vh;
+  }
+}
+
+@media (min-width: 761px) {
+  .bg-img {
+      min-height: 100vh;
+  }
+}
+
+</style>
 <body>
 <div>
     <div class="bg-img">
       <div class="container">
         <div class="white card p-4 w-100">
             <div class="container-fluid text-center">
-                <img src="img/Ph_seal_Imus.png" alt="img" width="80px">
+                <img src="/ITEC60A/img/Ph_seal_Imus.png" alt="img" width="80px">
                 <h1>Find your Account</h1><hr>  
             </div>
             <div class="card-body">

@@ -1,14 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "db_scholarship";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'db_connection.php';
 
 if (isset($_GET['token'])) {
     $token = $_GET['token'];
@@ -59,12 +50,109 @@ if (isset($_GET['token'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reset Password</title>
+    <title>Scholarship Prgoram | Reset Password</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="f3.css">
     <link rel="icon" type="png" href="img/Ph_seal_Imus.png">
 </head>
+<style>
+    * {
+    padding: 0;
+    margin: 0;
+  }
+
+  @media (max-width: 576px) {
+    .bg-img {
+        min-height: 170vh;
+    }
+  }
+  
+  @media (min-width: 577px) and (max-width: 760px) {
+    .bg-img {
+        min-height: 160vh;
+    }
+  }
+  
+  @media (min-width: 761px) {
+    .bg-img {
+        min-height: 100vh;
+    }
+  }
+
+.bg-img{
+    background-image: linear-gradient(to right, rgba(32, 156, 72, .6), rgba(32, 156, 72, .6)), url(img/newcityhall.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.card-body {
+    background-color: #EBE6E6;
+    border-radius: 15px;
+}
+
+.card-body p{
+    font-size: medium;
+    text-align: center  ;
+}
+h1{
+    font-size: larger;
+    font-weight: bold;
+}   
+
+.white {
+    border: none;
+    border-radius: 15px;
+  }
+
+form .form-label{
+    font-weight: bold;
+}
+
+form .form-control {
+    border-radius: 10px; 
+    border: 1px solid #000000; 
+    transition: border-color 0.3s; 
+    background-color: #d2d2d2;
+  }
+
+
+.Btn2{
+    width: 250px;
+    height: 30px;
+    background: #053774;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    font-size: small;
+    color: white; 
+    
+}
+
+.container{
+    padding-top: 125px;
+    padding-bottom: 133px;
+    border-radius: 15px;
+  }
+
+  .toggle-password {
+    position: absolute;
+    right: 55px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding-bottom: 37px;
+  }
+  
+  .toggle-password img {
+    width: 20px;
+    height: 20px;
+  }
+  .error{
+    color: red;
+    font-weight: 700;
+  }
+</style>
 <body>
 <div class="bg-img">
     <div class="container">

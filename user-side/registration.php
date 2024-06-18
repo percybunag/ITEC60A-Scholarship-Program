@@ -5,28 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registration Form</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="registration.css">
-  <link rel="icon" type="png" href="img/Ph_seal_Imus.png">
-  <script>
-    function validateNumberInput(event) {
-      const input = event.target;
-      input.value = input.value.replace(/[^0-9]/g, '');
-    }
-  </script>
+  <link rel="icon" type="png" href="/ITEC60A/img/Ph_seal_Imus.png">
 </head>
+<style>
+  .bg-img {
+  background-image: linear-gradient(to right, rgba(32, 156, 72, .6), rgba(32, 156, 72, .6)), url(../img/newcityhall.jpg);
+  min-height:100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  border-radius: 15px; 
+  border: 1px solid #000000; 
+  overflow: hidden; 
+  padding: 20px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+form .form-control {
+  border-radius: 10px; 
+  border: 1px solid #000000; 
+  transition: border-color 0.3s; 
+  background-color: #d2d2d2;
+}
+
+.card .form-control:hover,
+.card .form-control:focus {
+border-color: rgba(32, 156, 72, .6);
+border-width: 3px;
+outline: none;
+}
+
+.container select.form-select {
+  border-radius: 10px;
+  border: 1px solid #000000;
+  background-color: #d2d2d2;
+  transition: border-color 0.3s;
+}
+
+.container select.form-select:hover {
+  border-color: rgba(32, 156, 72, .6);
+  border-width: 3px;
+  outline: none;
+}
+
+.container{
+  margin-top: 4rem;
+}
+
+form .form-control, 
+form .form-select {
+border-radius: 10px !important;
+border: 1px solid #000000;
+padding: 10px;
+}
+
+.btn {
+  border-radius: 10px;
+}
+
+.copyright{
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  color:white;
+  align-self:center;
+  text-align:center;
+  margin-top:50px;
+}
+
+</style>
 <body>
 <?php
-// Database configuration
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "db_scholarship";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'db_connection.php';
 
 function sanitizeInput($data) {
     return htmlspecialchars(stripslashes(trim($data)));
@@ -67,7 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <div class="bg-img">
     <div class="container">
       <div class="card p-4">
-        <center><img src="img/Ph_seal_Imus.png" alt="" class="justify-content-center" width="90px"></center>
+        <center><img src="/ITEC60A/img/Ph_seal_Imus.png" alt="" class="justify-content-center" width="90px"></center>
         <h1 class="text-center mb-3">REGISTRATION</h1>
         <form action="registration.php" method="post">
           <div class="row">
@@ -251,6 +313,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <p class="copyright">City of Imus | Office of Scholarship Program © 2024 All Rights Reserved Terms of Use and Privacy Policy</p>
     </div>
   </div>
+  <script>
+    function validateNumberInput(event) {
+      const input = event.target;
+      input.value = input.value.replace(/[^0-9]/g, '');
+    }
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
